@@ -1,3 +1,6 @@
 
 openstego/
+openstego.jar
+assets/output/
+assets/transformation/
 .DS_Store

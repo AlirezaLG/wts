@@ -11,7 +11,8 @@ The initial step is to generate at least 5 copies of Test OutGuess 01 with diffe
 
 ## 1.Check if we can detect embedded message after rotation transformation
 Run this command to see the result:
-`steghide extract -p ""  -sf ./assets/transformation/rotation/rotated_simg1.jpg -xf ./assets/transformation/rotation/msg1.txt`
+
+`steghide extract -p ""  -sf ./assets/transformation/rotation/rotated_simg1.jpg -xf ./assets/transformation/rotation/msg1.txt` 
 `steghide extract -p ""  -sf ./assets/transformation/rotation/rotated_simg5.jpg -xf ./assets/transformation/rotation/msg5.txt`
 
 **Result is**: Could not extract any data
@@ -19,14 +20,14 @@ Run this command to see the result:
 
 ## 2. Check if we can detect embedded message after crop
 Run this command to see the result:
-`steghide extract -p ""  -sf ./assets/transformation/crop/cropped_simg1.jpg -xf ./assets/transformation/crop/msg1.txt`
+`steghide extract -p ""  -sf ./assets/transformation/crop/cropped_simg1.jpg -xf ./assets/transformation/crop/msg1.txt` 
 `steghide extract -p ""  -sf ./assets/transformation/crop/cropped_simg5.jpg -xf ./assets/transformation/crop/msg5.txt`
 
 **Result is**: Could not extract any data
 
 ## 3. Check if we can detect embedded message after Jpeg comperssions
 Run this command to see the result:
-`steghide extract -p ""  -sf ./assets/transformation/comperssion/comp_simg1.jpg -xf ./assets/transformation/comperssion/msg1.txt`
+`steghide extract -p ""  -sf ./assets/transformation/comperssion/comp_simg1.jpg -xf ./assets/transformation/comperssion/msg1.txt` 
 `steghide extract -p ""  -sf ./assets/transformation/comperssion/comp_simg2.jpg -xf ./assets/transformation/comperssion/msg2.txt`
 
 **Result is**: Could not extract any data
@@ -35,6 +36,7 @@ Run this command to see the result:
 
 ## 4. Check if we can detect embedded message after different MatLab Filters
 Run this command to see the result:
+
 `steghide extract -p ""  -sf ./assets/transformation/others/noise_reduced.jpg -xf ./assets/transformation/comperssion/msg1.txt`
 
 `steghide extract -p ""  -sf ./assets/transformation/others/gamma_corrected.jpg -xf ./assets/transformation/comperssion/msg2.txt`

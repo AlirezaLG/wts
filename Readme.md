@@ -70,5 +70,5 @@ Run this command to see the result:
 Check offical repository of Steghide for windows users <a href="https://github.com/StegHigh/steghide?tab=readme-ov-file">https://github.com/StegHigh/steghide?tab=readme-ov-file</a>
 
 ## Reference 
-Online documentation at [openstego.com](https://www.openstego.com/cmdline.html)
+Online documentation at  [Openstego.com](https://www.openstego.com/cmdline.html) and [Steghide](https://www.kali.org/tools/steghide/)
 

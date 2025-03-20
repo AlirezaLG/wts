@@ -20,7 +20,7 @@ images = {imread(asset.output  + "simg1.jpg"),
 % Task 1: Rotation 
 % #################
 % Rotation vector 
-
+% 
 rotation = [90, 180, 270, 360, 450];
 rotated_imgs = {}
 for i= 1:length(rotation)
@@ -41,7 +41,7 @@ end
 % #################
 % Task 2: Cut
 % #################
-
+% 
 crop = [0.1,0.2,0.5, 0.7,0.9];
 cropped_images = {}
 for i=1:length(images)
@@ -63,7 +63,7 @@ end
 % #########################
 % Task 3: Jpeg Comperssions
 % #########################
-
+% 
 comperssion = [100, 75, 50, 20, 10];
 comp_images = {}
 for i=1:length(images)
@@ -84,7 +84,7 @@ end
 % Task 4: Image Filters
 % #########################
 watermarked_img = imread(asset.output  + "simg1.jpg");
-
+% 
 figure;
 subplot(3, 3, 1);
 imshow(watermarked_img);

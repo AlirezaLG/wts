@@ -1,15 +1,15 @@
 clc, clearvars, close all;
 
-asset.output = "./assets/output/";
-asset.trans = "./assets/transformation/";
+asset.output = "./assets/watermarked_openStego/";
+asset.trans = "./assets/transformation_openStego/";
 
 
 % Read all stego images
-images = {imread(asset.output  + "simg1.jpg"),
-          imread(asset.output  + "simg2.jpg"),
-          imread(asset.output  + "simg3.jpg"),
-          imread(asset.output  + "simg4.jpg"),
-          imread(asset.output  + "simg5.jpg"),
+images = {imread(asset.output  + "openStego_img1.png"),
+          imread(asset.output  + "openStego_img2.png"),
+          imread(asset.output  + "openStego_img3.png"),
+          imread(asset.output  + "openStego_img4.png"),
+          imread(asset.output  + "openStego_img5.png"),
           };
 
 % simple conversion
@@ -26,7 +26,7 @@ rotated_imgs = {}
 for i= 1:length(rotation)
     rotated_img = imrotate(images{i}, rotation(i));
     rotated_imgs{i} = rotated_img;
-    imwrite(rotated_img, asset.trans + "/rotation/rotated_simg"+i+".jpg");
+    imwrite(rotated_img, asset.trans + "/rotation/rotated_simg"+i+".png");
 end
 
 % Now check again after transformation, is it possible to check the
@@ -41,7 +41,7 @@ end
 % #################
 % Task 2: Cut
 % #################
-% 
+ 
 crop = [0.1,0.2,0.5, 0.7,0.9];
 cropped_images = {}
 for i=1:length(images)
@@ -50,7 +50,7 @@ for i=1:length(images)
     new_height = round(height * (1-crop(i)));
     cropped_img = images{i}(1:new_height,:,:);
     cropped_images{i} = cropped_img; 
-    imwrite(cropped_img, asset.trans + "/crop/cropped_simg"+i+".jpg");
+    imwrite(cropped_img, asset.trans + "/crop/cropped_simg"+i+".png");
 end
 
 figure;
@@ -63,28 +63,28 @@ end
 % #########################
 % Task 3: Jpeg Comperssions
 % #########################
+ 
+% comperssion = [100, 75, 50, 20, 10];
+% comp_images = {}
+% for i=1:length(images)
+%     filename =  sprintf(asset.trans + "/comperssion/comp_simg" + i + ".png");
+%     imwrite(images{i},filename , 'Quality', comperssion(i));
+%     comp_images{i} = imread(filename);
+% end
 % 
-comperssion = [100, 75, 50, 20, 10];
-comp_images = {}
-for i=1:length(images)
-    filename =  sprintf(asset.trans + "/comperssion/comp_simg" + i + ".jpg");
-    imwrite(images{i},filename , 'Quality', comperssion(i));
-    comp_images{i} = imread(filename);
-end
-
-figure;
-for i = 1:length(images)
-    subplot(2, 3, i);
-    imshow(comp_images{i});
-    title(sprintf("%d.Comperssion: %d%%", i, comperssion(i)));
-end
+% figure;
+% for i = 1:length(images)
+%     subplot(2, 3, i);
+%     imshow(comp_images{i});
+%     title(sprintf("%d.Comperssion: %d%%", i, comperssion(i)));
+% end
 
 
 % #########################
 % Task 4: Image Filters
 % #########################
-watermarked_img = imread(asset.output  + "simg1.jpg");
-% 
+watermarked_img = imread(asset.output  + "openStego_img1.png");
+
 figure;
 subplot(3, 3, 1);
 imshow(watermarked_img);
